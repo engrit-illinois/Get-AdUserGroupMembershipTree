@@ -9,6 +9,17 @@ Must be run as your SU account in order for it to see and return all groups. Run
 2. Run it using the examples and documentation provided below.
 
 # Parameters
+
+### UserName
+WIP
+
+### PassThru
+WIP
+
+### PassThruFlat
+WIP
+
+### CsvDir
 WIP
 
 # Notes
