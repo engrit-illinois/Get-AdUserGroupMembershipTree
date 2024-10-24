@@ -4,7 +4,6 @@ function Get-AdUserGroupMembershipTree {
 		[Parameter(Mandatory=$true,Position=0)]
 		[string]$UserName,
 		
-		[switch]$ConsoleReport,
 		[switch]$PassThru,
 		[string]$CsvDir,
 		[switch]$TestRun
@@ -191,14 +190,14 @@ function Get-AdUserGroupMembershipTree {
 	}
 	
 	function Report-FlatGroups($flatGroups) {
-		if($ConsoleReport) {
-			log "Printing report..."
-			$flatGroups | ForEach-Object {
-				$group = $_
-				$color = Get-NestingColor $group
-				log $group.Nesting -L 1 -FC $color
-			}
+		log "Printing report. Direct memberships are in $($COLOR_DIRECT):"
+		log "------------------------------------------------------------"
+		$flatGroups | ForEach-Object {
+			$group = $_
+			$color = Get-NestingColor $group
+			log $group.Nesting -L 1 -FC $color
 		}
+		log "------------------------------------------------------------"
 	}
 	
 	function Do-Stuff {

@@ -14,10 +14,6 @@ Must be run as your SU account in order for it to see and return all groups. Run
 Required string.  
 The name of the AD user for which to pull group membership data.  
 
-### ConsoleReport
-Optional switch.  
-If specified, prints an ordered report of all the flattened groups, colorized based on membership type.  
-
 ### PassThru
 Optional switch.  
 If specified returns all of the flattened group data as an array of PowerShell objects.
