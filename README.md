@@ -1,5 +1,5 @@
 # Summary
-Returns data representing all the AD groups a given user belongs to, including a flat list of all groups and their ancestries.  
+Returns data representing all the AD groups a given user belongs to, flattened into an array, but retaining information about whether membership in the groups are direct, nested, or both.  
 
 # Requirements
 Must be run as your SU account in order for it to see and return all groups. Running as an account without full provileges will return only a subset of group memberships.  
@@ -11,16 +11,20 @@ Must be run as your SU account in order for it to see and return all groups. Run
 # Parameters
 
 ### UserName
-WIP
+Required string.  
+The name of the AD user for which to pull group membership data.  
+
+### ConsoleReport
+Optional switch.  
+If specified, prints an ordered report of all the flattened groups, colorized based on membership type.  
 
 ### PassThru
-WIP
-
-### PassThruFlat
-WIP
+Optional switch.  
+If specified returns all of the flattened group data as an array of PowerShell objects.
 
 ### CsvDir
-WIP
+Optional string.  
+The directory where a CSV will be saved, containing all of the flattened group data, if specified.  
 
 # Notes
 - By mseng3. See my other projects here: https://github.com/mmseng/code-compendium.
