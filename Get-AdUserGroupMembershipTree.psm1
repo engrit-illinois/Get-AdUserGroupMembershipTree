@@ -195,7 +195,9 @@ function Get-AdUserGroupMembershipTree {
 		$flatGroups | ForEach-Object {
 			$group = $_
 			$color = Get-NestingColor $group
-			log $group.Nesting -L 1 -FC $color
+			# For readability
+			$nesting = $group.Nesting.Replace("/"," / ")
+			log $nesting -L 1 -FC $color
 		}
 		log "------------------------------------------------------------"
 	}
