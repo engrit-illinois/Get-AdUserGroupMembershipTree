@@ -26,8 +26,6 @@ Must be run as your SU account in order for it to see and return all groups. Run
 Get-AdUserGroupMembershipTree -UserName "username"
 ```
 
-### Export to C
-
 # Parameters
 
 ### UserName
