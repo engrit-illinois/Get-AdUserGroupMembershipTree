@@ -1,13 +1,6 @@
 # Summary
 Returns data representing all the AD groups a given user belongs to, flattened into an array, but retaining information about whether membership in the groups are direct, nested, or both.  
 
-# Requirements
-Must be run as your SU account in order for it to see and return all groups. Running as an account without full provileges will return only a subset of group memberships.  
-
-# Usage
-1. Download `Get-AdUserGroupMembershipTree.psm1` to the appropriate subdirectory of your PowerShell [modules directory](https://github.com/engrit-illinois/how-to-install-a-custom-powershell-module).
-2. Run it using the examples and documentation provided below.
-
 # Behavior
 The key thing about this module is that, while it flattens the list of results for easier consumption and export, those results preserve data gathered while recursively searching all groups of which the given user is a member.  
 
@@ -18,6 +11,13 @@ As such, it becomes easy to determine how and why the given user is a nested mem
 In the following example, the user `ewsguest899` is a direct member of `engr-ews-testgroup`, `engr-ews-testgroup2`, and `engr-ews-testgroup3`. Additionally `engr-ews-testgroup2` and `engr-ews-testgroup3` are both members of `engr-ews-testgroup`. So you can easily see that `ewsguest899` is a member of `engr-ews-testgroup` for 3 separate reasons: once as a direct member, and twice as a nested member.  
 
 <img src='example1.png' alt='Screenshot of console output of the module matching previous description.' />
+
+# Requirements
+Must be run as your SU account in order for it to see and return all groups. Running as an account without full provileges will return only a subset of group memberships.  
+
+# Usage
+1. Download `Get-AdUserGroupMembershipTree.psm1` to the appropriate subdirectory of your PowerShell [modules directory](https://github.com/engrit-illinois/how-to-install-a-custom-powershell-module).
+2. Run it using the examples and documentation provided below.
 
 # Examples
 
